@@ -39,6 +39,11 @@ const restaurant = {
             `Order received: ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
         );
     },
+    orderPasta: function (ing1, ing2, ing3) {
+        console.log(
+            `Here is the delicious pasta you ordered with ${ing1}, ${ing2}, and ${ing3}`
+        );
+    },
 };
 
 // *************
@@ -120,3 +125,44 @@ const restaurant = {
 // console.log(p, q, r);
 // const [p = 1, q = 1, r = 1] = [8, 9];
 // console.log(p, q, r);
+
+// *************
+// THE SPREAD OPERATOR
+
+// let arr = [7, 8, 9];
+// let newArr = [1, 2, 3, ...arr];
+// console.log(arr, newArr);
+
+// const newMenu = [...restaurant.mainMenu, "Gnocci"];
+// console.log(newMenu);
+// shallow copy of array
+// const mainMenuCopy = [...restaurant.mainMenu];
+// merging arrays
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
+
+// const str = "Jonas";
+// const letters = [...str, " ", "S."];
+// console.log(letters);
+
+// real world example
+// const ingredients = [
+//     prompt("Let's make pasta! Ingredient 1?"),
+//     prompt("Ingredient 2?"),
+//     prompt("Ingredient 3?"),
+// ];
+// console.log(ingredients);
+
+// restaurant.orderPasta(...ingredients);
+
+// objects
+// const newRestaurant = { ...restaurant, founder: "Guiseppe", foundedIn: 2011 };
+// console.log(newRestaurant);
+
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = "New name";
+// console.log(restaurant.name);
+// console.log(restaurantCopy.name);
+
+// *************
+// REST PATTERNS & PARAMETERS
