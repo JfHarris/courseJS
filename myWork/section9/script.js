@@ -11,10 +11,6 @@ const restaurant = {
     categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
     starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
     mainMenu: ["Pizza", "Pasta", "Risotto"],
-    order: function (starterIndex, mainIndex) {
-        return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-    },
-
     openingHours: {
         thu: {
             open: 12,
@@ -29,7 +25,62 @@ const restaurant = {
             close: 24,
         },
     },
+    order: function (starterIndex, mainIndex) {
+        return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+    },
+    // order of args does not have to match their order in object
+    orderDelivery: function ({
+        starterIndex = 1,
+        mainIndex = 0,
+        time = "20:00",
+        address,
+    }) {
+        console.log(
+            `Order received: ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+        );
+    },
 };
+
+// *************
+// DESTRUCTURING OBJECTS
+
+// const { name, openingHours, categories } = restaurant;
+// console.log(name, openingHours, categories);
+// // ASSIGNING NEW NAMES
+// const {
+//     name: restaurantName,
+//     openingHours: hours,
+//     categories: tags,
+// } = restaurant;
+// console.log(restaurantName, hours, categories);
+// DEFAULT VALUES
+// const { menu = [], starterMenu: starters = [] } = restaurant;
+// console.log(menu, starters);
+// MUTATING VARS
+// let a = 111;
+// let b = 999;
+// const obj = { a: 23, b: 7, c: 14 };
+// ({ a, b } = obj);
+// console.log(a, b);
+// NESTED OBJECTS
+// const {
+//     fri: { open, close },
+// } = openingHours;
+// console.log(open, close);
+// FUNCTIONS
+// restaurant.orderDelivery({
+//     time: "23:38",
+//     address: "Via del Sole, 23",
+//     mainIndex: 2,
+//     starterIndex: 2,
+// });
+
+// restaurant.orderDelivery({
+//     address: "Via del Sole, 23",
+//     starterIndex: 1,
+// });
+// *************
+// DESTRUCTURING ARRAYS
 
 // const arr = [2, 3, 4];
 // const a = arr[0];
