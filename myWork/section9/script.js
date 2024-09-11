@@ -1,5 +1,5 @@
 "use strict";
-
+// reverse chronological order to keep restaurant object easily visible
 // Data needed for a later exercise
 const flights =
     "_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30";
@@ -44,8 +44,80 @@ const restaurant = {
             `Here is the delicious pasta you ordered with ${ing1}, ${ing2}, and ${ing3}`
         );
     },
+    orderPizza: function (mainIngredient, ...otherIngredients) {
+        console.log(mainIngredient);
+        console.log(otherIngredients);
+    },
 };
 
+// *************
+// SHORT CIRCUITING (&& and ||)
+// Use ANY value type, return ANY value type, short-circuiting
+// console.log("-------OR------");
+// console.log(3 || "Jonas");
+// console.log("" || "Jonas");
+// console.log(true || 0);
+// console.log(undefined || null);
+
+// restaurant.numGuests = 23;
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1);
+
+// const guests2 = restaurant.numGuests || 10;
+// console.log(guests2);
+// // AND--short circuiting
+// console.log("-------AND------");
+// console.log(0 && "Jonas");
+// console.log(7 && "Jonas");
+// console.log("Hello" && 23 && null && "Jonas");
+
+// // practical example
+// if (restaurant.orderPizza) {
+//     restaurant.orderPizza("mushrooms", "spinach");
+// }
+// // doing above with short-circuiting
+// restaurant.orderPizza && restaurant.orderPizza("mushrooms", "spinach");
+
+// *************
+// REST PATTERNS & PARAMETERS
+// destructuring
+// // spread --- right side of assignment operator
+// const arr = [1, 2, ...[3, 4]];
+// console.log(arr);
+
+// // rest --- left side of assignment operator
+// const [a, b, ...others] = [1, 2, 4, 7, 9];
+// console.log(a, b, others);
+
+// const [pizza, , risotto, ...otherFood] = [
+//     ...restaurant.mainMenu,
+//     ...restaurant.starterMenu,
+// ];
+// console.log(pizza, risotto, otherFood);
+
+// //objects
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
+
+// functions
+// function add(...numbers) {
+//     let sum = 0;
+
+//     for (let i = 0; i < numbers.length; i++) {
+//         sum += numbers[i];
+//     }
+//     console.log(sum);
+// }
+
+// add(2, 3); // 5
+// add(5, 3, 7, 2); // 17
+// add(8, 2, 5, 3, 2, 1, 4); // 25
+
+// const x = [23, 5, 7];
+// add(...x);
+
+// restaurant.orderPizza("mushrooms", "onions", "olives", "spinach");
+// restaurant.orderPizza("mushrooms");
 // *************
 // DESTRUCTURING OBJECTS
 
@@ -163,6 +235,3 @@ const restaurant = {
 // restaurantCopy.name = "New name";
 // console.log(restaurant.name);
 // console.log(restaurantCopy.name);
-
-// *************
-// REST PATTERNS & PARAMETERS
