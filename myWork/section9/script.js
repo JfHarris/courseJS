@@ -51,7 +51,57 @@ const restaurant = {
 };
 
 // *************
+// LOGICAL ASSIGNMENT OPERATORS
+
+// const rest1 = {
+//     name: "Capri",
+//     // numGuests: 20,
+//     numGuests: 0,
+// };
+
+// const rest2 = {
+//     name: "La Piazza",
+//     owner: "Giovanni Rossi",
+// };
+
+// setting default numGuests-if numGuests exists use that property and value.
+// If Not, add it to object and set to 10
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+// !!!! more concise way using assignment operator (OR assignment operator) !!!!
+// Assigns vale to var if var is currently falsy--like rest2.numGuests is
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+// console.log(rest1);
+// console.log(rest2);
+
+// !!!! NULLISH assignment operator !!!!
+// rest1.numGuests ??= 10;
+// rest2.numGuests ??= 10;
+
+// !!!! AND assignment operator !!!!
+// rest1.owner = rest1.owner && "anonymous";
+// rest2.owner = rest2.owner && "anonymous";
+// nothing will happen below since rest1.ownder is falsy
+// rest1.owner &&= "anonymous";
+// will change to anonymous below since rest2.ownder is truthy
+// rest2.owner &&= "anonymous";
+// console.log(rest1);
+// console.log(rest2);
+
+// *************
+// THE NULLISH COALESCING OPERATOR (??)
+
+// restaurant.numGuests = 0;
+// const guests = restaurant.numGuests || 10;
+// console.log(guests);
+
+// const guestsCorrect = restaurant.numGuests ?? 10;
+// console.log(guestsCorrect);
+
+// *************
 // SHORT CIRCUITING (&& and ||)
+
 // Use ANY value type, return ANY value type, short-circuiting
 // console.log("-------OR------");
 // console.log(3 || "Jonas");
@@ -118,6 +168,14 @@ const restaurant = {
 
 // restaurant.orderPizza("mushrooms", "onions", "olives", "spinach");
 // restaurant.orderPizza("mushrooms");
+
+// restaurant.numGuests = 10;
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1);
+
+// const guests2 = restaurant.numGuests || 10;
+// console.log(guests2);
+
 // *************
 // DESTRUCTURING OBJECTS
 
