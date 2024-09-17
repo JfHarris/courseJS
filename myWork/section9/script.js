@@ -55,19 +55,47 @@ const restaurant = {
 };
 
 // *************
+// Looping Objects: Object Keys, Values, and Entries
+// // PROPERTY NAMES
+// // for (const day of Object.keys(openingHours)) {
+// //     console.log(day);
+// // }
+// // ↓ gives us an array stored in a var---allows looping--can't iterate an object
+// const properties = Object.keys(openingHours);
+// console.log(properties);
+// let openStr = `We are open on ${properties.length} days:`;
+
+// for (const day of properties) {
+//     openStr += ` ${day}`;
+// }
+// console.log(openStr);
+
+// // PROPERT VALUES
+// const openValues = Object.values(openingHours);
+// console.log(openValues);
+
+// // OBJECT ENTRIES
+// const openingEntries = Object.entries(openingHours);
+// console.log(openingEntries);
+
+// for (const [key, { open, close }] of openingEntries) {
+//     console.log(`On ${key} we open at ${open} and close at ${close}`);
+// }
+// *************
 // OPTIONAL CHAINING
-const days = ["mon", "tue", "wed", "thur", "fri", "sat", "sun"];
-for (const day of days) {
-    // console.log(day);
-    const opening = restaurant.openingHours[day]?.open ?? "closed";
-    console.log(`On ${day}, we open at ${opening}`);
-}
-// methods
-console.log(restaurant.order?.(0, 1) ?? "Method does not exist");
-console.log(restaurant.orderRisotto?.(0, 1) ?? "Method does not exist");
-//arrays
-const users = [{ name: "Jonas", email: "hello@jonas.io" }];
-console.log(users[0]?.name ?? "User empty");
+
+// const days = ["mon", "tue", "wed", "thur", "fri", "sat", "sun"];
+// for (const day of days) {
+//     // console.log(day);
+//     const opening = restaurant.openingHours[day]?.open ?? "closed";
+//     console.log(`On ${day}, we open at ${opening}`);
+// }
+// // methods
+// console.log(restaurant.order?.(0, 1) ?? "Method does not exist");
+// console.log(restaurant.orderRisotto?.(0, 1) ?? "Method does not exist");
+// //arrays
+// const users = [{ name: "Jonas", email: "hello@jonas.io" }];
+// console.log(users[0]?.name ?? "User empty");
 // *************
 // ENHANCED OBJECT LITERALS
 
