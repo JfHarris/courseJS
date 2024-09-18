@@ -224,6 +224,132 @@ const books = [
         highlighted: true,
     },
 ];
+
+// ******************
+// DESTRUCTURING ARRAYS
+
+const game = {
+    team1: "Bayern Munich",
+    team2: "Borrussia Dortmund",
+    players: [
+        [
+            "Neuer",
+            "Pavard",
+            "Martinez",
+            "Alaba",
+            "Davies",
+            "Kimmich",
+            "Goretzka",
+            "Coman",
+            "Muller",
+            "Gnarby",
+            "Lewandowski",
+        ],
+        [
+            "Burki",
+            "Schulz",
+            "Hummels",
+            "Akanji",
+            "Hakimi",
+            "Weigl",
+            "Witsel",
+            "Hazard",
+            "Brandt",
+            "Sancho",
+            "Gotze",
+        ],
+    ],
+    score: "4:0",
+    scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+    date: "Nov 9th, 2037",
+    odds: {
+        team1: 1.33,
+        draw: 3.25,
+        team2: 6.5,
+    },
+};
+
+/* Your tasks:
+1. Loop over the game.scored array and print each player name to the console,
+along with the goal number (Example: "Goal 1: Lewandowski")
+*/
+// // MY SOLUTION
+// for (let [goalIndex, goalScorer] of Object.entries(game.scored)) {
+//     goalIndex++;
+//     console.log(`Goal ${goalIndex}: ${goalScorer}`);
+// }
+// // INSTRUCTOR SOLUTION
+// for (const [index, player] of game.scored.entries()) {
+//     console.log(`Goal ${index + 1}: ${player}`);
+// }
+
+/*
+2. Use a loop to calculate the average odd and log it to the console (We already
+studied how to calculate averages, you can go check if you don't remember)
+*/
+// MY SOLUTION
+
+// let sumOdds = 0;
+// let numOfOdds = 0;
+
+// for (const outcome of Object.values(game.odds)) {
+//     sumOdds += outcome;
+//     numOfOdds++;
+// }
+// const avgOfOdds = (sumOdds / numOfOdds).toFixed(2);
+// console.log(avgOfOdds);
+
+// INSTRUCTOR SOLUTION 1
+// let average = 0;
+
+// for (const odd of Object.values(game.odds)) {
+//     average += odd;
+// }
+// average /= Object.values(game.odds).length;
+// console.log(average);
+
+// INSTRUCTOR SOLUTION 1 REFACTOR
+
+// const odds = Object.values(game.odds);
+// let average = 0;
+// for (const odd of odds) {
+//     average += odd;
+// }
+// average /= odds.length;
+// console.log(average);
+
+/*
+3. Print the 3 odds to the console, but in a nice formatted way, exactly like this:
+Odd of victory Bayern Munich: 1.33
+Odd of draw: 3.25
+Odd of victory Borrussia Dortmund: 6.5
+Get the team names directly from the game object, don't hardcode them
+(except for "draw"). Hint: Note how the odds and the game objects have the
+same property names 😉
+*/
+// MY SOLUTION **incomplete
+
+for (const [key, value] of Object.entries(game.odds)) {
+    console.log(`Odds of victory ${key}: ${value}`);
+}
+
+// INSTRUCTOR SOLUTION 1
+
+for (const [team, odd] of Object.entries(game.odds)) {
+    const teamStr = team === "draw" ? "draw" : `victory ${game[team]}`;
+    console.log(`Odd of ${teamStr}: ${odd}`);
+}
+/*
+4. Bonus: Create an object called 'scorers' which contains the names of the
+players who scored as properties, and the number of goals as the value. In this
+game, it will look like this:
+{
+Gnarby: 1,
+Hummels: 1,
+Lewandowski: 2
+}
+*/
+
 // ******************
 // DESTRUCTURING ARRAYS
 
@@ -536,11 +662,11 @@ Using computed properties, fill the newBook object with the properties and value
 
 In the end, the entries array should be filled with arrays containing keys: */
 
-const entries = [];
-for (const keyword of Object.keys(books[0].thirdParty.goodreads)) {
-    entries.push([keyword]);
-}
-console.log(entries);
+// const entries = [];
+// for (const keyword of Object.keys(books[0].thirdParty.goodreads)) {
+//     entries.push([keyword]);
+// }
+// console.log(entries);
 
 /* The Object.values() method returns an array, which means you can call the Array's entries() method on it, for example, Object.entries(books[0].thirdParty.goodreads).entries(). The Array's entries() method returns [index, value] arrays for each element in the array.
 
@@ -548,14 +674,14 @@ Use the for-of loop together with the Object.values() method and Array's entries
 
 Push each value to the appropriate inner array in the entries array (use index from entries()). */
 
-for (const [index, value] of Object.values(
-    books[0].thirdParty.goodreads
-).entries()) {
-    entries[index].push(value);
-}
+// for (const [index, value] of Object.values(
+//     books[0].thirdParty.goodreads
+// ).entries()) {
+//     entries[index].push(value);
+// }
 
 /* Use the Object.entries() method on the thirdParty.goodreads property of the first book from the books array. Assign the returned value to the variable called entries2. */
-const entries2 = Object.entries(books[0].thirdParty.goodreads);
+// const entries2 = Object.entries(books[0].thirdParty.goodreads);
 /* Log the entries and entries2 variables to the console, and compare them. They should look the same. */
-console.log(entries);
-console.log(entries2);
+// console.log(entries);
+// console.log(entries2);
