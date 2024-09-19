@@ -228,46 +228,74 @@ const books = [
 // ******************
 // DESTRUCTURING ARRAYS
 
-const game = {
-    team1: "Bayern Munich",
-    team2: "Borrussia Dortmund",
-    players: [
-        [
-            "Neuer",
-            "Pavard",
-            "Martinez",
-            "Alaba",
-            "Davies",
-            "Kimmich",
-            "Goretzka",
-            "Coman",
-            "Muller",
-            "Gnarby",
-            "Lewandowski",
-        ],
-        [
-            "Burki",
-            "Schulz",
-            "Hummels",
-            "Akanji",
-            "Hakimi",
-            "Weigl",
-            "Witsel",
-            "Hazard",
-            "Brandt",
-            "Sancho",
-            "Gotze",
-        ],
-    ],
-    score: "4:0",
-    scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
-    date: "Nov 9th, 2037",
-    odds: {
-        team1: 1.33,
-        draw: 3.25,
-        team2: 6.5,
-    },
-};
+/* Below is the allKeywords variable, which stores an empty array. Loop over the books array, and fill the allKeywords array with the keywords coming from the keywords property of each book object. The allKeywords array should have just one level (no nested arrays).
+
+Use whatever loop and methods you want. You can also use the spread syntax. In the end, the allKeywords array should look more or less like this: ['computer science', 'programming', 'algorithms', 'data structures', ...]. */
+// const allKeywords = [];
+// for (const book of books) {
+//     allKeywords.push(...book.keywords);
+// }
+// console.log(allKeywords);
+// /* The allKeyword array contains duplicates. Remove them by creating a Set out of that array. Assign the newly created set to the uniqueKeywords variable. */
+// const uniqueKeywords = new Set(allKeywords);
+// console.log(uniqueKeywords);
+// /* Add two more keywords to the uniqueKeywords set, for example, 'coding' and 'science'. */
+// uniqueKeywords.add("coding");
+// uniqueKeywords.add("science");
+// console.log(uniqueKeywords);
+// /* Delete 'business' from the uniqueKeywords set. */
+// uniqueKeywords.delete("business");
+// console.log(uniqueKeywords);
+// /* Create an array out of the uniqueKeywords set, and assign it to the uniqueKeywordsArr variable. */
+// const uniqueKeywordsArr = [...uniqueKeywords];
+// console.log(uniqueKeywordsArr);
+// /* Delete all items from the uniqueKeywords set. */
+// uniqueKeywords.clear();
+// console.log(uniqueKeywords);
+
+// ******************
+// DESTRUCTURING ARRAYS
+
+// const game = {
+//     team1: "Bayern Munich",
+//     team2: "Borrussia Dortmund",
+//     players: [
+//         [
+//             "Neuer",
+//             "Pavard",
+//             "Martinez",
+//             "Alaba",
+//             "Davies",
+//             "Kimmich",
+//             "Goretzka",
+//             "Coman",
+//             "Muller",
+//             "Gnarby",
+//             "Lewandowski",
+//         ],
+//         [
+//             "Burki",
+//             "Schulz",
+//             "Hummels",
+//             "Akanji",
+//             "Hakimi",
+//             "Weigl",
+//             "Witsel",
+//             "Hazard",
+//             "Brandt",
+//             "Sancho",
+//             "Gotze",
+//         ],
+//     ],
+//     score: "4:0",
+//     scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+//     date: "Nov 9th, 2037",
+//     odds: {
+//         team1: 1.33,
+//         draw: 3.25,
+//         team2: 6.5,
+//     },
+// };
 
 /* Your tasks:
 1. Loop over the game.scored array and print each player name to the console,
@@ -329,16 +357,17 @@ same property names 😉
 */
 // MY SOLUTION **incomplete
 
-for (const [key, value] of Object.entries(game.odds)) {
-    console.log(`Odds of victory ${key}: ${value}`);
-}
+// for (const [key, value] of Object.entries(game.odds)) {
+//     console.log(`Odds of victory ${key}: ${value}`);
+// }
 
 // INSTRUCTOR SOLUTION 1
 
-for (const [team, odd] of Object.entries(game.odds)) {
-    const teamStr = team === "draw" ? "draw" : `victory ${game[team]}`;
-    console.log(`Odd of ${teamStr}: ${odd}`);
-}
+// for (const [team, odd] of Object.entries(game.odds)) {
+//     const teamStr = team === "draw" ? "draw" : `victory ${game[team]}`;
+//     console.log(`Odd of ${teamStr}: ${odd}`);
+// }
+
 /*
 4. Bonus: Create an object called 'scorers' which contains the names of the
 players who scored as properties, and the number of goals as the value. In this
