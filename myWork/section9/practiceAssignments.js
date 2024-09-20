@@ -224,6 +224,110 @@ const books = [
         highlighted: true,
     },
 ];
+// *************************
+// MAPS FUNDAMENTALS
+/* Create a new book, but this time, as a Map. Assign it to the bookMap variable. Use this array as initial data: */
+const bookMap = new Map([
+    ["title", "Clean Code"],
+    ["author", "Robert C. Martin"],
+]);
+
+// console.log(bookMap);
+/* Set a new key in bookMap called pages, and assign it with a number 464. */
+// bookMap.set("pages", 464);
+// console.log(bookMap);
+/* Get the title and author values from bookMap, and log to the console a string formatted like that: "${title} by ${author}". */
+// console.log(`${bookMap.get("title")} by ${bookMap.get("author")}`);
+/* Get the size of bookMap, and log it to the console. */
+// console.log(bookMap.size);
+/* Check if bookMap has the author key. and if so, log "The author of the book is known" to the console. */
+// bookMap.has("authors")
+//     ? console.log("The author of the book is known")
+//     : console.log(false);
+// if (bookMap.has('author')) console.log('The author is known');
+// *************************
+/* https://github.com/joinpursuit/web-curriculum/blob/master/lessons/es6/spread-operator/spread-operator-practice-exercises.md */
+
+/* Write a function called combineAllArrays that takes in any number of arrays as arguments and combines all of them into one array. */
+/*   **************** */
+
+/* Write a function called squareAndSum that takes in any number of arguments, squares them, then sums all of the squares. */
+/*  **************  */
+
+/* Write a function called sumEveryOther that takes in any amount of arguments, and returns the sum of every other argument. */
+
+// function sumEveryOther(...args) {
+//     let sum = 0;
+
+//     for (let i = 0; i < args.length; i++) {
+//         if (i % 2 === 0) {
+//             sum += args[i];
+//         } else continue;
+//     }
+
+//     console.log(sum);
+// }
+
+// sumEveryOther(5, 6, 3, 4, 1);
+// sumEveryOther(10, 2, 11);
+
+/* Write a function called onlyUniques that can take in any number of arguments, and returns an array of only the unique arguments. */
+
+// function onlyUniques(...args) {
+//     let uniqueSet = new Set([...args]);
+//     let uniqueArr = [...uniqueSet];
+//     console.log(uniqueArr);
+//     return uniqueArr;
+// }
+
+// onlyUniques("cat", "cat", "dog", "pig");
+// onlyUniques(1, 4, 7, 1, 2, 7, 4);
+
+/* Write a function called combineTwoArrays that takes in two arrays as arguments, and returns a single array that combines both (using the spread operator). */
+
+// function combineTwoArrays([...arr1], [...arr2]) {
+//     const finalArray = [...arr1, ...arr2];
+//     console.log(finalArray);
+//     return finalArray;
+// }
+
+// combineTwoArrays([3, 4], [3, 4]);
+
+/* Write a function called addOnlyNums that can take in any number of arguments (including numbers or strings), and returns the sum of only the numbers. */
+
+// function addOnlyNums(...args) {
+//     let sum = 0;
+
+//     for (let i = 0; i < args.length; i++) {
+//         if (typeof args[i] === "string") {
+//             continue;
+//         } else sum += args[i];
+//     }
+//     console.log(sum);
+// }
+
+// addOnlyNums(1, "cat", 3, 4);
+
+//  *** Write a function that can take in any number of arguments, and returns the sum of all of the arguments.
+// function addArgs(...args) {
+//     let sum = 0;
+//     for (let i = 0; i < args.length; i++) {
+//         sum += args[i];
+//     }
+//     console.log(sum);
+// }
+
+// addArgs(5, 7, 9);
+
+/* - Write a function called `countTheArgs` that can take any number of arguments, and returns the number of arguments that are passed in */
+
+// function countTheArgs(...args) {
+//     console.log(args.length);
+//     return args.length;
+// }
+
+// countTheArgs("cat", "dog");
+// countTheArgs("cat", "dog", "frog", "bear");
 
 // ******************
 // DESTRUCTURING ARRAYS
