@@ -224,27 +224,105 @@ const books = [
         highlighted: true,
     },
 ];
+
+// *************************
+// CODING CHALLENGE #3
+
+// const gameEvents = new Map([
+//     [17, "⚽ GOAL"],
+//     [36, "🔁 Substitution"],
+//     [47, "⚽ GOAL"],
+//     [61, "🔁 Substitution"],
+//     [64, "🔶 Yellow card"],
+//     [69, "🔴 Red card"],
+//     [70, "🔁 Substitution"],
+//     [72, "🔁 Substitution"],
+//     [76, "⚽ GOAL"],
+//     [80, "⚽ GOAL"],
+//     [92, "🔶 Yellow card"],
+// ]);
+
+/* Your tasks:
+1. Create an array 'events' of the different game events that happened (no
+duplicates) */
+
+// const events = [...new Set(gameEvents.values())];
+// console.log(events);
+
+/* 2. After the game has finished, is was found that the yellow card from minute 64
+was unfair. So remove this event from the game events log. */
+
+// gameEvents.delete(64);
+// console.log(gameEvents);
+
+/* 3. Compute and log the following string to the console: "An event happened, on
+average, every 9 minutes" (keep in mind that a game has 90 minutes) */
+
+// console.log(gameEvents.size);
+// console.log(
+//     `An event happened on average every ${Math.round(
+//         90 / gameEvents.size
+//     )} minutes.`
+// );
+
+/* 4. Loop over 'gameEvents' and log each element to the console, marking
+whether it's in the first half or second half (after 45 min) of the game, like this:
+[FIRST HALF] 17: ⚽ GOAL
+*/
+
+// for (const [key, value] of gameEvents) {
+//     key <= 45
+//         ? console.log(`[FIRST HALF] ${key}: ${value}`)
+//         : console.log(`[SECOND HALF] ${key}: ${value}`);
+// }
+
+// *************************
+// MAPS ITERATION
+
+/* Convert the first book object from the books array into a Map, and assign it to a firstBookMap variable. */
+
+// const firstBookMap = new Map(Object.entries(books[0]));
+// console.log(firstBookMap);
+
+/* Use the for-of loop to iterate over firstBookMap, and log to the console keys that have numbers as values. */
+
+// for (const [key, value] of firstBookMap) {
+//     if (typeof value === "number") {
+//         console.log(key);
+//     } else continue;
+// }
+
 // *************************
 // MAPS FUNDAMENTALS
+
 /* Create a new book, but this time, as a Map. Assign it to the bookMap variable. Use this array as initial data: */
-const bookMap = new Map([
-    ["title", "Clean Code"],
-    ["author", "Robert C. Martin"],
-]);
+
+// const bookMap = new Map([
+//     ["title", "Clean Code"],
+//     ["author", "Robert C. Martin"],
+// ]);
 
 // console.log(bookMap);
+
 /* Set a new key in bookMap called pages, and assign it with a number 464. */
+
 // bookMap.set("pages", 464);
 // console.log(bookMap);
+
 /* Get the title and author values from bookMap, and log to the console a string formatted like that: "${title} by ${author}". */
+
 // console.log(`${bookMap.get("title")} by ${bookMap.get("author")}`);
+
 /* Get the size of bookMap, and log it to the console. */
 // console.log(bookMap.size);
+
 /* Check if bookMap has the author key. and if so, log "The author of the book is known" to the console. */
+
 // bookMap.has("authors")
 //     ? console.log("The author of the book is known")
 //     : console.log(false);
 // if (bookMap.has('author')) console.log('The author is known');
+
 // *************************
 /* https://github.com/joinpursuit/web-curriculum/blob/master/lessons/es6/spread-operator/spread-operator-practice-exercises.md */
 
