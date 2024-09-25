@@ -224,6 +224,191 @@ const books = [
         highlighted: true,
     },
 ];
+// *************************
+// CODING CHALLENGE 4
+
+/*
+Write a program that receives a list of variable names written in underscore_case
+and convert them to camelCase.
+The input will come from a textarea inserted into the DOM (see code below to
+insert the elements), and conversion will happen when the button is pressed.
+Test data (pasted to textarea, including spaces):
+underscore_case
+first_name
+Some_Variable
+calculate_AGE
+delayed_departure
+Should produce this output (5 separate console.log outputs):
+underscoreCase ✅
+firstName ✅✅
+someVariable ✅✅✅
+calculateAge ✅✅✅✅
+delayedDeparture ✅✅✅✅✅
+Hints:
+§ Remember which character defines a new line in the textarea 😉
+§ The solution only needs to work for a variable made out of 2 words, like a_b
+§ Start without worrying about the ✅. Tackle that only after you have the variable
+name conversion working 😉
+§ This challenge is difficult on purpose, so start watching the solution in case
+you're stuck. Then pause and continue!
+Afterwards, test with your own test data!
+GOOD LUCK 😀 */
+
+// document.body.append(document.createElement("textarea"));
+// document.body.append(document.createElement("button"));
+
+// document.querySelector("button").addEventListener("click", function () {
+//     const text = document.querySelector("textarea").value;
+//     const rows = text.split("\n");
+
+//     for (const row of rows) {
+//         const [first, second] = row.toLowerCase().trim().split("_");
+//         const ouptut = `${first}${second.replace(
+//             second[0],
+//             second[0].toUpperCase()
+//         )}`;
+//         console.log(ouptut);
+//     }
+// });
+
+// *************************
+// WORKING WITH STRINGS--PART 3
+
+/* Below is the bookCategories variable that stores a string of categories. Each category is separated with a semicolon, for example, in a string "science;computing", 'science' and 'computing' are separate categories.
+
+Write a function called logBookCategories that takes a string of categories separated with semicolons, and logs each category to the console (as separate strings). */
+// const bookCategories =
+//     "science;computing;computer science;algorithms;business;operating systems;networking;electronics";
+
+// function logBookCategories(bookInfo) {
+//     const bookArr = bookInfo.split(";");
+//     for (const cat in bookArr) {
+//         console.log(bookArr[cat]);
+//     }
+// }
+
+// logBookCategories(bookCategories);
+
+/* Now, the opposite. Each book from the books array has the keywords property.
+
+Write a function called getKeywordsAsString that takes the books array as an argument, collects keywords from each book, removes duplicates, and then joins them to create a single string where keywords are separated by a semicolon. */
+
+// function getKeywordsAsString(books) {
+//     const keywords = [];
+//     for (const book of books) {
+//         keywords.push(...book.keywords);
+//     }
+//     const uniqueKeywords = [...new Set(keywords)];
+//     console.log(uniqueKeywords.join(";"));
+// }
+
+// getKeywordsAsString(books);
+
+/* Below is the bookChapters array that contains inner arrays. Each inner array consists of a chapter's title, and the number of a page, for example, in ['The Basics', 14], 'The Basics' is the chapter's title, and 14 is the number of a page.
+
+Write a function called logBookChapters that takes an array of arrays (like bookChapters) as an argument, and logs each chapter's name to the console together with the page number. The page number should be separated from the chapter's name with underscores (take a look at the example below).
+
+Use the padEnd method. */
+
+// const bookChapters = [
+//     ["The Basics", 14],
+//     ["Sorting", 254],
+//     ["Searching", 372],
+//     ["Graphs", 526],
+//     ["Strings", 706],
+// ];
+
+// function logBookChapters(chapters) {
+//     for (const [chapter, pages] of chapters) {
+//         console.log(chapter.padEnd(20, "_") + " " + pages);
+//     }
+// }
+
+// logBookChapters(bookChapters);
+
+// *************************
+// WORKING WITH STRINGS--PART 2
+/* Write a function called normalizeAuthorName that takes an author's name (string) as an argument, and returns the same string, but the first name and last name are capitalized, and the "(Contributor)" part is removed (if exists).
+You can be sure that the author's name always consists of two words separated by a space, and possibly ends with "(Contributor)". The string may also contain trailing spaces. */
+// function normalizeAuthorName(name) {
+//     const authorOnly = name.trim();
+//     const lowerName = authorOnly.toLowerCase();
+//     const nameOnly = lowerName.slice(0, lowerName.lastIndexOf(" "));
+//     const spaceIndex = nameOnly.lastIndexOf(" ");
+//     const firstNameCorrect =
+//         nameOnly[0].toUpperCase() + nameOnly.slice(1, spaceIndex);
+//     const lastNameCorrect =
+//         nameOnly[spaceIndex + 1].toUpperCase() + nameOnly.slice(spaceIndex + 2);
+//     console.log(firstNameCorrect + " " + lastNameCorrect);
+// }
+
+// normalizeAuthorName("  JuliE sussMan (Contributor)");
+
+/* Take the title of the second book (books[1]) from the books array, and replace the word "Programs" with "Software". Assign the new string to the newBookTitle variable. */
+
+// console.log(books[1].title);
+// const newBookTitle = books[1].title.replace("Programs", "Software");
+// console.log(newBookTitle);
+
+/* Write a function called logBookTheme that takes book's title (string), and logs to the console:
+"This book is about computers" if the title starts with the word "computer",
+"This book is about algorithms and data structures" if the title includes both the "algorithms" and "structures" words,
+and, "This book is about some systems, but definitely not about operating systems" if the title ends with the word "system" or "systems", but doesn't include the word "operating". */
+
+// function logBookTheme(titleString) {
+//     function logBookTheme(title) {
+//         title = title.toLowerCase();
+
+//         if (title.startsWith("computer")) {
+//             console.log("This book is about computers");
+//         } else if (
+//             title.includes("algorithms") &&
+//             title.includes("structures")
+//         ) {
+//             console.log("This book is about algorithms and data structures");
+//         } else if (
+//             (title.endsWith("system") || title.endsWith("systems")) &&
+//             !title.includes("operating")
+//         ) {
+//             console.log(
+//                 "This book is about some systems, but definitely not about operating systems"
+//             );
+//         }
+//     }
+// }
+
+// *************************
+// WORKING WITH STRINGS--PART 1
+
+/* Take the ISBN property of the first book from the books array, and log to the console characters at index 6, 4, 9 and 8. Use bracket notation to access individual characters. */
+
+// console.log(
+//     books[0].ISBN["6"],
+//     books[0].ISBN["4"],
+//     books[0].ISBN["9"],
+//     books[0].ISBN[8]
+// );
+
+/* Below is the quote variable that stores a string. Find the index of the word 'chess', and log it to the console. */
+
+// const quote =
+//     "A computer once beat me at chess, but it was no match for me at kick boxing";
+// console.log(quote.indexOf("chess"));
+
+/* Extract the word "boxing" from the same quote string, and log it to the console. */
+
+// const boxingSection = quote.slice(quote.lastIndexOf(" ") + 1);
+// console.log(boxingSection);
+
+/* Some authors are noted as "(Contributor)", for example "Julie Sussman (Contributor)". Create a function called isContributor that takes an author's name as an argument, and returns either true (if he's a contributor) of false (if he's not a contributor). The string "(Contributor)" is always the last part of the author's name string. */
+
+// function isContributor(authorName) {
+//     if (authorName.lastIndexOf("(Contributor") !== -1) console.log(true);
+//     else console.log(false);
+// }
+
+// isContributor("Julie Sussman (Contributor)");
+// isContributor("Julie Sussman (Contr)");
 
 // *************************
 // CODING CHALLENGE #3
